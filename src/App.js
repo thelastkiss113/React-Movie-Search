@@ -4,7 +4,7 @@ import MovieDisplay from "./components/MovieDisplay";
 import Form from "./components/Form";
 
 export default function App() {
-  const apiKey = "6d5d355a"; // Your OMDB API key
+  const apiKey = "6d5d355a"; 
 
   // State to hold movie data
   const [movie, setMovie] = useState(null);
