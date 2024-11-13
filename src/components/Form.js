@@ -1,4 +1,11 @@
 export default function Form(props) {
-    return <h1>Form Component</h1>;
+    return (
+      <div>
+        <form>
+          <input type="text" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    );
   }
   
