@@ -4,7 +4,7 @@ import MovieDisplay from "./components/MovieDisplay";
 import Form from "./components/Form";
 
 export default function App() {
-  const apiKey = "6d5d355a"; 
+  const apiKey = "6d5d355a"; // Your OMDB API key
 
   // State to hold movie data
   const [movie, setMovie] = useState(null);
@@ -22,10 +22,26 @@ export default function App() {
     }
   };
 
-  // UseEffect to load a default movie on page load
+  // Array of movie titles to pick from
+  const movieTitles = [
+    "The Godfather", 
+    "Forrest Gump", 
+    "The Dark Knight", 
+    "Inception", 
+    "Titanic", 
+    "The Shawshank Redemption", 
+    "Clueless",
+    "Pulp Fiction",
+    "The Matrix",
+    "Gladiator"
+  ];
+
+  // UseEffect to load a random movie on page load
   useEffect(() => {
-    getMovie("Clueless"); // Fetch "Clueless" movie by default
-  }, []);
+    const randomMovie = movieTitles[Math.floor(Math.random() * movieTitles.length)];
+    getMovie(randomMovie); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); 
 
   return (
     <div className="App">
