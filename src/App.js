@@ -1,22 +1,10 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import MovieDisplay from './components/MovieDisplay';
-import Form
- from './components/Form';
-
-
- export default function App() {
-  return (
-    <div className="App">
-      <Form />
-      <MovieDisplay />
-    </div>
-  );
-}
-
+import { useState, useEffect } from "react";
+import "./App.css";
+import MovieDisplay from "./components/MovieDisplay";
+import Form from "./components/Form";
 
 export default function App() {
-  const apiKey = "6d5d355a";  
+  const apiKey = "6d5d355a"; // Your OMDB API key
 
   // State to hold movie data
   const [movie, setMovie] = useState(null);
@@ -33,6 +21,11 @@ export default function App() {
       console.error("Error fetching movie data", e);
     }
   };
+
+  // UseEffect to load a default movie on page load
+  useEffect(() => {
+    getMovie("Clueless"); // Fetch "Clueless" movie by default
+  }, []);
 
   return (
     <div className="App">
